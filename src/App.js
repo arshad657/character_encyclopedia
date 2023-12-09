@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import CharacterDetails from './Pages/CharacterDetails/CharacterDetails';
+import Characters from './Pages/Characters/Characters';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './Header/Header';
+import Favorites from './Pages/Favorites/Favorites';
+import { useState } from 'react';
+
 
 function App() {
+  const [currentURL, setCurrentURL] = useState(window.location.href);
+  const [favCharacters, setFavCharacters] = useState([]);
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header currentURL={currentURL}/>
+
+      <Routes>
+        <Route path="/" exact element={<Characters currentURL={currentURL} setCurrentURL={setCurrentURL} favCharacters={favCharacters}  setFavCharacters={setFavCharacters}/>} />
+        <Route path="/character/:id" exact element={<CharacterDetails/>} />
+        <Route path="/favorites" exact element={<Favorites favCharacters={favCharacters} currentURL={currentURL} setCurrentURL={setCurrentURL}/>} />
+      </Routes>
+    </Router>
   );
 }
 

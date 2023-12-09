@@ -1,0 +1,31 @@
+.character-detail-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .character-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .character-info {
+    margin-left: 20px;
+  }
+  
+  .episode-list {
+    margin-top: 10px;
+  }
+  
+  .episode-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .episode-list li {
+    margin-bottom: 5px;
+  }
+  

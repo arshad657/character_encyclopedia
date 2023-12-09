@@ -1,0 +1,8 @@
+.characters-main{
+    padding-left: 100px;
+}
+
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+}
